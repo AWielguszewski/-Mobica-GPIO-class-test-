@@ -19,7 +19,9 @@ public:
     GPIO(unsigned int num);
     ~GPIO();
     void setDirection(const char * direction);
+    QString getDirection();
     void setValue(const unsigned int value);
+    unsigned int getValue();
     unsigned int getPinNumber();
 private:
     GPIO(); //blokuj konstruktor domyslny

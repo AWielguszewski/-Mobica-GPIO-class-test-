@@ -16,10 +16,17 @@ int main(int argc, char *argv[])
 
     GPIO pin4(4);
     pin4.setDirection(IN);
+
     pin4.setValue(HIGH);
 
     view.setProperty("IVI-Surface-ID", QML_EXAMPLE_SURFACE_ID);
     view.show();
 
     return app.exec();
+}
+
+void delay(unsigned int time)
+{
+    while(time >0)
+        time--;
 }
