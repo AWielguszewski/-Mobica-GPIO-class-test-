@@ -42,7 +42,7 @@ signal qmlSignal(string msg)
                     font.bold: true
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 20
+                    font.pixelSize: 22
                 }
             }
         }
