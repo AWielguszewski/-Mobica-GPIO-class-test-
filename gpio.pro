@@ -4,11 +4,11 @@ QT += qml quick widgets
 
 SOURCES   += main.cpp\
 	gpioclass.cpp
-HEADERS   +=\
-        gpioclass.h
+HEADERS   += gpioclass.h \
+     main.h
 RESOURCES += qml.qrc
 
-INCLUDEPATH += /usr/include/c++/5
+#INCLUDEPATH += /usr/include/c++/5.4.0
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

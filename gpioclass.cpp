@@ -77,7 +77,7 @@ QString GPIO::getDirection()
     direction_path.append(PIN_FOLDER_PATH).append(QString::number(pin_number)).append("/direction");
 
     QFile direction_file(direction_path);
-    if (!direction_file.open(QIODevice::WriteOnly | QIODevice::Text))
+    if (!direction_file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         qDebug() << "Error: Cannot open file: " << direction_path;
         return "";
@@ -116,7 +116,7 @@ unsigned int GPIO::getValue()
     value_path.append(PIN_FOLDER_PATH).append(QString::number(pin_number)).append("/value");
 
     QFile value_file(value_path);
-    if (!value_file.open(QIODevice::WriteOnly | QIODevice::Text))
+    if (!value_file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         qDebug() << "Error: Cannot open file: " << value_path;
         return 0;
