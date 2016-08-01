@@ -4,6 +4,8 @@
 
 #define QML_EXAMPLE_SURFACE_ID 3
 
+void delay(unsigned int time);
+
 int main(int argc, char *argv[])
 {
     setenv("QT_QPA_PLATFORM", "wayland", 1); // force to use wayland plugin
@@ -17,7 +19,14 @@ int main(int argc, char *argv[])
     GPIO pin4(4);
     pin4.setDirection(IN);
 
-    pin4.setValue(HIGH);
+    while(1)
+    {
+        if(pin4.getValue() == HIGH)
+            pin4.setValue(LOW);
+        else
+            pin4.setValue(HIGH);
+        delay(2000);
+    }
 
     view.setProperty("IVI-Surface-ID", QML_EXAMPLE_SURFACE_ID);
     view.show();

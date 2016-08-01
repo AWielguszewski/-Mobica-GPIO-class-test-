@@ -80,7 +80,7 @@ QString GPIO::getDirection()
     if (!direction_file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         qDebug() << "Error: Cannot open file: " << direction_path;
-        return;
+        return "";
     }
 
     QTextStream streamFromDirectionFile(&direction_file);
@@ -119,7 +119,7 @@ unsigned int GPIO::getValue()
     if (!value_file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         qDebug() << "Error: Cannot open file: " << value_path;
-        return;
+        return 0;
     }
 
     QTextStream streamFromValueFile(&value_file);
